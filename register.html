@@ -1,0 +1,36 @@
+{% extends "index.html" %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>UMW Tennis Center - Register</title>
+  <meta charset= "UTF-8"/>
+<link type="text/css" rel="stylesheet" href="style.css"/>
+</head>
+<body>
+{% block content %}
+{% endblock %}
+  <div class="content">  
+  <form class="registration">
+  	Name: <input type="text" id="name"/><br />
+  	Phone: <input type="text" id="phone"/><br />
+  	Email: <input type="text" id="email"/><br />
+  	<br />
+	Select your status: <br />
+	<input type="radio" name="status" value="fulltime"/>Full-Time Student <br />
+	<input type="radio" name="status" value="halftime"/>Half-Time Student <br />
+	<input type="radio" name="status" value="facstaff"/>UMW Faculty/Staff <br />
+	<input type="radio" name="status" value="noaff"/>No Affliation to UMW<br />
+	<br />
+	If you are a student, please enter your expected graduation date: <br />
+	<input type="text" id="graddate" /><br />
+	<br />
+	Enter a password for your account: <br />
+	<input type="password" id="pass1" /><br />
+	Retype your account password:<br />
+	<input type="password" id="pass2" /><br />
+	<br />
+	<input type="submit" name="submit" value="Create Account" />
+  </form>
+</div>
+</body>
+</html>
