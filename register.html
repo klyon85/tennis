@@ -5,29 +5,118 @@
   <title>UMW Tennis Center - Register</title>
   <meta charset= "UTF-8"/>
 <link type="text/css" rel="stylesheet" href="style.css"/>
+<script>
+function phoneCheck() {
+    
+        var validFlag = true;
+        var given = document.getElementById("phone").value;
+        var toFormat = given.toString();
+        var stripCharacters = toFormat.replace(/\D/g,''); //this will remove any additional characters the user entered
+        if (stripCharacters.length != 10) {
+             alert("Phone number must be 10 digits!");
+             document.getElementById("phone").value = "";
+             validFlag = false;
+        }
+        
+        if(validFlag == true) {
+        
+        var formattedNumber = "";
+        var firstSegment = stripCharacters.slice(0,3);
+        var secondSegment = stripCharacters.slice(3,6);
+        var thirdSegment = stripCharacters.slice(6,10);
+        
+        formattedNumber = "(" + firstSegment + ")" + " - " + secondSegment + " - " + thirdSegment;
+        
+        alert(formattedNumber);
+        
+        document.getElementById("phone").value = formattedNumber;
+        
+        
+        }
+        
+}
+
+function emailCheck() {
+
+    var given2 = document.getElementById("email").value;
+    var toFormat2 = given2.toString();
+    if (toFormat2.indexOf("@") < 1) {
+        alert("Please enter a valid email address!");
+        document.getElementById("email").value = "";
+        }
+
+
+}
+
+function passwordCheck() {
+
+    var pass1 = document.getElementById("pass1").value;
+    var pass2 = document.getElementById("pass2").value;
+    
+    if(pass1.toString() != pass2.toString()) {
+    
+        document.getElementById("pass1").value = "";
+        document.getElementById("pass2").value = "";
+        alert("Passwords did not match! Please try again.");
+        
+        }
+
+}
+</script>
 </head>
 <body>
 {% block content %}
 {% endblock %}
   <div class="content">  
   <form class="registration">
-  	Name: <input type="text" id="name"/><br />
-  	Phone: <input type="text" id="phone"/><br />
-  	Email: <input type="text" id="email"/><br />
+  	<label>Name: </label><input type="text" id="name" /><br />
+  	<label>Phone: </label><input type="text" id="phone" placeholder="XXX-XXX-XXXX" onblur = "phoneCheck();"/><br />
+  	<label>Email: </label><input type="email" id="email" placeholder="name@example.com" onblur = "emailCheck();"/><br />
   	<br />
 	Select your status: <br />
 	<input type="radio" name="status" value="fulltime"/>Full-Time Student <br />
 	<input type="radio" name="status" value="halftime"/>Half-Time Student <br />
 	<input type="radio" name="status" value="facstaff"/>UMW Faculty/Staff <br />
-	<input type="radio" name="status" value="noaff"/>No Affliation to UMW<br />
+	<input type="radio" name="status" value="noaff" checked="checked"/>No Affliation to UMW<br />
 	<br />
-	If you are a student, please enter your expected graduation date: <br />
-	<input type="text" id="graddate" /><br />
-	<br />
-	Enter a password for your account: <br />
-	<input type="password" id="pass1" /><br />
+	If you are a student, please enter your expected graduation date: <br /><br />
+	
+        <fieldset class="date"> 
+        <legend>Graduation Month/Year: </legend> 
+        <select id="month" name="month" />
+            <option>N/A</option>
+            <option>January</option>       
+            <option>February</option>       
+            <option>March</option>       
+            <option>April</option>       
+            <option>May</option>       
+            <option>June</option>       
+            <option>July</option>       
+            <option>August</option>       
+            <option>September</option>       
+            <option>October</option>       
+            <option>November</option>       
+            <option>December</option>       
+        </select> - 
+        <select id="year_start" name="year_start" /> 
+            <option>N/A</option>
+            <option>2016</option>       
+            <option>2017</option>       
+            <option>2018</option>       
+            <option>2019</option>       
+            <option>2020</option>       
+            <option>2021</option>       
+            <option>2022</option>       
+            <option>2023</option>       
+            <option>2024</option>       
+            <option>2025</option>       
+        </select> 
+    </fieldset> 
+    <br />
+        Enter a password for your account: <br />
+            <input type="password" id="pass1" /><br />
 	Retype your account password:<br />
-	<input type="password" id="pass2" /><br />
+            <input type="password" id="pass2" onblur="passwordCheck();" /><br />
 	<br />
 	<input type="submit" name="submit" value="Create Account" />
   </form>
