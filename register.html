@@ -1,7 +1,15 @@
 {% extends "index.html" %}
 <!DOCTYPE html>
+<?php
+
+require_once("usercake/models/config.php");
+if (!securePage($_SERVER['PHP_SELF'])){die();}
+
+?>
+
 <html>
 <head>
+if(isUserLoggedIn()) { header("Location: account.php"); die(); }
   <title>UMW Tennis Center - Register</title>
   <meta charset= "UTF-8"/>
 <link type="text/css" rel="stylesheet" href="style.css"/>
@@ -26,7 +34,7 @@ function phoneCheck() {
         var thirdSegment = stripCharacters.slice(6,10);
         
         formattedNumber = "(" + firstSegment + ")" + " - " + secondSegment + " - " + thirdSegment;
-        
+                
         document.getElementById("phone").value = formattedNumber;
         
         
@@ -63,13 +71,13 @@ function passwordCheck() {
 </script>
 </head>
 <body>
-{% block body %}
+{% block content %}
 {% endblock %}
   <div class="content">  
-  <form class="registration">
-  	<label>Name: </label><input type="text" id="name" /><br />
-  	<label>Phone: </label><input type="text" id="phone" placeholder="XXX-XXX-XXXX" onblur = "phoneCheck();"/><br />
-  	<label>Email: </label><input type="email" id="email" placeholder="name@example.com" onblur = "emailCheck();"/><br />
+  <form class="registration" action="usercake/test.php" method="post">
+  	<label>Name: </label><input type="text" name="name" id="name" /><br />
+  	<label>Phone: </label><input type="text" id="phone" name="phone"placeholder="XXX-XXX-XXXX" onblur = "phoneCheck();"/><br />
+  	<label>Email: </label><input type="email" name="email" id="email" placeholder="name@example.com" onblur = "emailCheck();"/><br />
   	<br />
 	Select your status: <br />
 	<input type="radio" name="status" value="fulltime"/>Full-Time Student <br />
@@ -114,7 +122,7 @@ function passwordCheck() {
         Enter a password for your account: <br />
             <input type="password" id="pass1" /><br />
 	Retype your account password:<br />
-            <input type="password" id="pass2" onblur="passwordCheck();" /><br />
+            <input type="password" id="pass2" name="password" onblur="passwordCheck();" /><br />
 	<br />
 	<input type="submit" name="submit" value="Create Account" />
   </form>
