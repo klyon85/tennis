@@ -71,8 +71,16 @@ function passwordCheck() {
 </script>
 </head>
 <body>
-{% block content %}
-{% endblock %}
+  <div class = "menu">
+    <ul>
+	  <li><a href = "index.html">Home</a></li>
+	  <li><a href = "register.html">Register</a></li>
+	  <li><a href = "reservations.html">Reservations</a></li>
+	  <li><a href = "account.html">My Account</a></li>
+	  <li><a href = "about.html">About Us</a></li>
+	</ul>
+  </div>
+
   <div class="content">  
   <form class="registration" action="usercake/test.php" method="post">
   	<label>Name: </label><input type="text" name="name" id="name" /><br />
