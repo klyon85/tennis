@@ -1,15 +1,9 @@
 {% extends "index.html" %}
 <!DOCTYPE html>
-<?php
 
-require_once("usercake/models/config.php");
-if (!securePage($_SERVER['PHP_SELF'])){die();}
-
-?>
 
 <html>
 <head>
-if(isUserLoggedIn()) { header("Location: account.php"); die(); }
   <title>UMW Tennis Center - Register</title>
   <meta charset= "UTF-8"/>
 <link type="text/css" rel="stylesheet" href="style.css"/>
@@ -75,7 +69,7 @@ function passwordCheck() {
     <ul>
 	  <li><a href = "index.html">Home</a></li>
 	  <li><a href = "register.html">Register</a></li>
-	  <li><a href = "reservations.html">Reservations</a></li>
+	  <li><a href = "login.html">Log In</a></li>
 	  <li><a href = "account.html">My Account</a></li>
 	  <li><a href = "about.html">About Us</a></li>
 	</ul>
