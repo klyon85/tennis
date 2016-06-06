@@ -1,0 +1,20 @@
+USE cpsc348_smiller3;
+
+CREATE TABLE tennis_users(
+    user_id INTEGER PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    email VARCHAR(50) NOT NULL,
+    pass VARCHAR(32) NOT NULL,
+    phone INTEGER NOT NULL,
+    status INTEGER NOT NULL,
+    graddate INTEGER NOT NULL
+);
+
+CREATE TABLE tennis_reservations(
+    res_id INTEGER PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    user_id INTEGER NOT NULL,
+    title VARCHAR(255) NOT NULL,
+    start DATETIME NOT NULL,
+    end DATETIME NOT NULL,
+    date DATE NOT NULL,
+    court INTEGER NOT NULL
+);
