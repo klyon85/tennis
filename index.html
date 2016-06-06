@@ -14,6 +14,7 @@
 <script src='scheduler.min.js'></script>
 <link type="text/css" rel="stylesheet" href="style.css"/>
 <link href='lib/cupertino/jquery-ui.min.css' rel='stylesheet' />
+<script src="http://www.w3schools.com/lib/w3data.js"></script>
 <script>
 
 	$(function() { // document ready
@@ -90,18 +91,10 @@
 </style>
 </head>
 <body>
-	 <div class = "menu">
-
-    <ul>
-      <li><a href = "index.html">Home</a></li>
-      <li><a href = "register.html">Register</a></li>
-      <li><a href = "login.html">Log In</a></li>
-      <li><a href = "account.html">My Account</a></li>
-      <li><a href = "about.html">About Us</a></li>
-    </ul>
-    
-  </div>
-  
+	 <div w3-include-html="menu.html" class="menu"> </div>
+ 	 <script>
+		w3IncludeHTML();
+	 </script>
   <div class = "content">
   <h1>UMW Tennis Center Reservation Portal</h1>  
   <p>Welcome to the official UMW Tennis Center reservation portal! You can use this website to reserve court times and cancel them, all without an account! All you need is an email address to get started!</p>
