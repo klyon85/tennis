@@ -1,68 +1,11 @@
 <!DOCTYPE html>
-
-
 <html>
 <head>
   <title>UMW Tennis Center - Register</title>
   <meta charset= "UTF-8"/>
 <link type="text/css" rel="stylesheet" href="style.css"/>
 <script src="http://www.w3schools.com/lib/w3data.js"></script>
-<script>
-function phoneCheck() {
-    
-        var validFlag = true;
-        var given = document.getElementById("phone").value;
-        var toFormat = given.toString();
-        var stripCharacters = toFormat.replace(/\D/g,''); //this will remove any additional characters the user entered
-        if (stripCharacters.length != 10) {
-             alert("Phone number must be 10 digits!");
-             document.getElementById("phone").value = "";
-             validFlag = false;
-        }
-        
-        if(validFlag == true) {
-        
-        var formattedNumber = "";
-        var firstSegment = stripCharacters.slice(0,3);
-        var secondSegment = stripCharacters.slice(3,6);
-        var thirdSegment = stripCharacters.slice(6,10);
-        
-        formattedNumber = "(" + firstSegment + ")" + " - " + secondSegment + " - " + thirdSegment;
-                
-        document.getElementById("phone").value = formattedNumber;
-        
-        
-        }
-        
-}
-
-function emailCheck() {
-
-    var given2 = document.getElementById("email").value;
-    var toFormat2 = given2.toString();
-    if (toFormat2.indexOf("@") < 1) {
-        alert("Please enter a valid email address!");
-        document.getElementById("email").value = "";
-        }
-
-
-}
-
-function passwordCheck() {
-
-    var pass1 = document.getElementById("pass1").value;
-    var pass2 = document.getElementById("pass2").value;
-    
-    if(pass1.toString() != pass2.toString()) {
-    
-        document.getElementById("pass1").value = "";
-        document.getElementById("pass2").value = "";
-        alert("Passwords did not match! Please try again.");
-        
-        }
-
-}
-</script>
+<script type="text/javascript" src="forms.js"></script>
 </head>
 <body>
   <div w3-include-html="menu.html"  class="menu"></div>
@@ -71,9 +14,9 @@ function passwordCheck() {
   <div class="content">  
   <h1>UMW Tennis Center Account Registration</h1>
   <form class="registration" action="usercake/test.php" method="post">
-  	<label>Name: </label><input type="text" name="name" id="name" /><br />
-  	<label>Phone: </label><input type="text" id="phone" name="phone"placeholder="XXX-XXX-XXXX" onblur = "phoneCheck();"/><br />
-  	<label>Email: </label><input type="email" name="email" id="email" placeholder="name@example.com" onblur = "emailCheck();"/><br />
+  	<label>Name: </label><input type="text" name="name" id="name" required /><br />
+  	<label>Phone: </label><input type="text" id="phone" name="phone"placeholder="XXX-XXX-XXXX" onblur = "phoneCheck();" required/><br />
+  	<label>Email: </label><input type="email" name="email" id="email" placeholder="name@example.com" onblur = "emailCheck();" required/><br />
   	<br />
 	Select your status: <br />
 	<input type="radio" name="status" value="fulltime"/>Full-Time Student <br />
@@ -116,9 +59,9 @@ function passwordCheck() {
     </fieldset> 
     <br />
         Enter a password for your account: <br />
-            <input type="password" id="pass1" /><br />
+            <input type="password" id="pass1" required/><br />
 	Retype your account password:<br />
-            <input type="password" id="pass2" name="password" onblur="passwordCheck();" /><br />
+            <input type="password" id="pass2" name="password" onblur="passwordCheck();" required /><br />
 	<br />
 	<input type="submit" name="submit" value="Create Account" />
   </form>

@@ -83,6 +83,18 @@ input:focus {
     margin-left: -0.5em;
     min-height: 75px;
 }
+
+#solid {
+	opacity: 1.0;
+};
+
+#calendar {
+	max-width: 900px;
+	margin: 0 auto;
+	background-color: green;
+	opacity: 1;
+};
+
 header {
    
 }
