@@ -19,7 +19,7 @@
     $month = htmlspecialchars($_POST["month"]);
 	$year = htmlspecialchars($_POST["year_start"]);
     $password = htmlspecialchars($_POST["password"]);
-
+	
 	$name1 = mysqli_real_escape_string($conn, $name);
 	$phone1 = mysqli_real_escape_string($conn, $phone);
 	$email1 = mysqli_real_escape_string($conn, $email);
@@ -34,7 +34,7 @@
 	} else {
         
     $password1 = password_hash($password1, PASSWORD_DEFAULT);
-		$sql = "INSERT INTO tennis_users(email, password, phone, status, graddate) VALUES ('$email1', '$password1', $phone1, '$status1', $year1);";
+		$sql = "INSERT INTO tennis_users(email, password, phone, status, graddate) VALUES ('$email1', '$password1', '$phone1', '$status1', '$month1.$year1');";
 		$result = @mysqli_query($conn, $sql);
 		$row = mysqli_fetch_array($result, MYSQL_NUM);
 
