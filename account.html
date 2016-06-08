@@ -1,23 +1,15 @@
 <!DOCTYPE html>
-<?php
-
-require_once("usercake/models/config.php");
-if (!securePage($_SERVER['PHP_SELF'])){die();}
-
-?>
-
 <html>
 <head>
-if(isUserLoggedIn()) { header("Location: account.php"); die(); }
   <title>UMW Tennis Center - Register</title>
   <meta charset= "UTF-8"/>
 <link type="text/css" rel="stylesheet" href="style.css"/>
 <script src="http://www.w3schools.com/lib/w3data.js"></script>
-<script type="text/javascript"  src="forms.js"></script>
+<script type="text/javascript" src="forms.js"></script>
 </head>
 <body>
    <div w3-include-html="menu.html" class = "menu"></div>
-   <script> w3includeHTML();</script>
+   <script> w3IncludeHTML();</script>
 <div class="content">  
   <h1>My Account Information</h1>
   <form class="registration" action="usercake/test.php" method="post">
