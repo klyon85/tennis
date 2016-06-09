@@ -7,7 +7,7 @@
 <script src="http://www.w3schools.com/lib/w3data.js"></script>
 </head>
 <body>
-  <div w3-include-html="menu.html" class = "menu"> </div>
+  <div w3-include-html="menu.html" action-"loginscript.php" class = "menu"> </div>
   <script>
   	w3IncludeHTML();
   </script>
