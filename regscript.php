@@ -11,14 +11,21 @@
 		echo("<p> Unable to connect to the database system" .
 		"Please try later. </p>");
 		exit();
-	}	
+	}
+	
+	if($_SESSION['user_id'] > 0) {
+		
+		echo "<p>You cannot register for a new account because you're already logged in.</p>";
+		$conn.close();
+		
+	}
 	$name = htmlspecialchars($_POST["name"]);
 	$phone = htmlspecialchars($_POST["phone"]);
-    $email = htmlspecialchars($_POST["email"]);
+    	$email = htmlspecialchars($_POST["email"]);
 	$status = htmlspecialchars($_POST["status"]);
-    $month = htmlspecialchars($_POST["month"]);
+    	$month = htmlspecialchars($_POST["month"]);
 	$year = htmlspecialchars($_POST["year_start"]);
-    $password = htmlspecialchars($_POST["password"]);
+		$password = htmlspecialchars($_POST["password"]);
 	
 	$name1 = mysqli_real_escape_string($conn, $name);
 	$phone1 = mysqli_real_escape_string($conn, $phone);
