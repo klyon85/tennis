@@ -24,7 +24,7 @@
 	 </script>
   <div class = "content">
   <h1>UMW Tennis Center Reservation Portal</h1>  
-  <p>Welcome to the official UMW Tennis Center reservation portal! You can use this website to reserve court times and cancel them, all without an account! All you need is an email address to get started!</p>
+  <p>Welcome to the official UMW Tennis Center reservation portal! You can use this website to reserve court times and cancel them! Create an account or log in to started!</p>
     <p>Use the menu above to get started!</p>
     <p><em>If you cannot use a reservation you have made, please kindly cancel in advance to avoid extra fees and allow other players to take advantage of the court time.</p>
     <div id = "solid">

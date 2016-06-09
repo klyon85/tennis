@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
- 	<title>UMW Tennis Center - My Account</title>title
+ 	<title>UMW Tennis Center - My Reservations</title>
 	<meta charset= "UTF-8"/>
 	<link type="text/css" rel="stylesheet" href="style.css"/>
 	<script src="http://www.w3schools.com/lib/w3data.js></script>

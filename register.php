@@ -1,47 +1,70 @@
-<HTML>
-<HEAD>
-<TITLE> Test Registration </TITLE>
-</HEAD>
-<BODY>
-<?php   
-    session_start();
-	include('mydbinfo.php');
-	$conn = @mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
-	if ( !$conn ) {
-		echo("<p> Unable to connect to the database system" .
-		"Please try later. </p>");
-		exit();
-	}	
-	$name = htmlspecialchars($_POST["name"]);
-	$phone = htmlspecialchars($_POST["phone"]);
-    $email = htmlspecialchars($_POST["email"]);
-	$status = htmlspecialchars($_POST["status"]);
-    $month = htmlspecialchars($_POST["month"]);
-	$year = htmlspecialchars($_POST["year_start"]);
-    $password = htmlspecialchars($_POST["password"]);
+<!DOCTYPE html>
+<html>
+<head>
+  <title>UMW Tennis Center - Register</title>
+  <meta charset= "UTF-8"/>
+<link type="text/css" rel="stylesheet" href="style.css"/>
+<script src="http://www.w3schools.com/lib/w3data.js"></script>
+<script type="text/javascript" src="forms.js"></script>
+</head>
+<body>
+  <div w3-include-html="menu.html"  class="menu"></div>
+  <script> w3IncludeHTML();</script>
+
+  <div class="content">  
+  <h1>UMW Tennis Center Account Registration</h1>
+  <form class="registration" action="register.php" method="post">
+  	<label>Name: </label><input type="text" name="name" id="name" required /><br />
+  	<label>Phone: </label><input type="text" id="phone" name="phone"placeholder="XXX-XXX-XXXX" onblur = "phoneCheck();" required/><br />
+  	<label>Email: </label><input type="email" name="email" id="email" placeholder="name@example.com" onblur = "emailCheck();" required/><br />
+  	<br />
+	Select your status: <br />
+	<input type="radio" name="status" value="fulltime"/>Full-Time Student <br />
+	<input type="radio" name="status" value="halftime"/>Half-Time Student <br />
+	<input type="radio" name="status" value="facstaff"/>UMW Faculty/Staff <br />
+	<input type="radio" name="status" value="noaff" checked="checked"/>No Affliation to UMW<br />
+	<br />
+	If you are a student, please enter your expected graduation date: <br /><br />
 	
-	$name1 = mysqli_real_escape_string($conn, $name);
-	$phone1 = mysqli_real_escape_string($conn, $phone);
-	$email1 = mysqli_real_escape_string($conn, $email);
-	$status1 = mysqli_real_escape_string($conn, $status);
-    $month1 = mysqli_real_escape_string($conn, $month);
-	$year1 = mysqli_real_escape_string($conn, $year);
-	$password1 = mysqli_real_escape_string($conn, $password);
-    //echo("<p>One or more fields was left blank. $name1 $phone1 $email1 $status1 $month1 $year1 $password1</p>");
-
-	if ($name1 == "" || $phone1 == "" || $email1 == "" || $status1 == "" || $year1 == "" || $password1 == "") {
-		exit;
-	} else {
-        
-    $password1 = password_hash($password1, PASSWORD_DEFAULT);
-		$sql = "INSERT INTO tennis_users(email, password, phone, status, graddate) VALUES ('$email1', '$password1', '$phone1', '$status1', '$month1.$year1');";
-		$result = @mysqli_query($conn, $sql);
-		$row = mysqli_fetch_array($result, MYSQL_NUM);
-
-		echo "You have registered successfully. Please head over to the login page to get started.";
-	}
-	$conn.close();
-?>
-</BODY>
-</HTML>
-		
+        <fieldset class="date"> 
+        <legend>Graduation Month/Year: </legend> 
+        <select id="month" name="month" />
+            <option>N/A</option>
+            <option>January</option>       
+            <option>February</option>       
+            <option>March</option>       
+            <option>April</option>       
+            <option>May</option>       
+            <option>June</option>       
+            <option>July</option>       
+            <option>August</option>       
+            <option>September</option>       
+            <option>October</option>       
+            <option>November</option>       
+            <option>December</option>       
+        </select> - 
+        <select id="year_start" name="year_start" /> 
+            <option>N/A</option>
+            <option>2016</option>       
+            <option>2017</option>       
+            <option>2018</option>       
+            <option>2019</option>       
+            <option>2020</option>       
+            <option>2021</option>       
+            <option>2022</option>       
+            <option>2023</option>       
+            <option>2024</option>       
+            <option>2025</option>       
+        </select> 
+    </fieldset> 
+    <br />
+        Enter a password for your account: <br />
+            <input type="password" id="pass1" required/><br />
+	Retype your account password:<br />
+            <input type="password" id="pass2" name="password" onblur="passwordCheck();" required /><br />
+	<br />
+	<input type="submit" name="submit" value="Create Account" />
+  </form>
+</div>
+</body>
+</html>
