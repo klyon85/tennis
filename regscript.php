@@ -12,13 +12,7 @@
 		"Please try later. </p>");
 		exit();
 	}
-	
-	if($_SESSION['user_id'] > 0) {
-		
-		echo "<p>You cannot register for a new account because you're already logged in.</p>";
-		$conn.close();
-		
-	}
+
 	$name = htmlspecialchars($_POST["name"]);
 	$phone = htmlspecialchars($_POST["phone"]);
     	$email = htmlspecialchars($_POST["email"]);
