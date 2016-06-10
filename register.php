@@ -13,7 +13,7 @@
 
   <div class="content">  
   <h1>UMW Tennis Center Account Registration</h1>
-  <form class="registration" action="registerscript.php" method="post">
+  <form class="registration" action="regscript.php" method="post">
   <?php   
     session_start();
 	include('mydbinfo.php');
