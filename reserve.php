@@ -31,8 +31,11 @@
 	
 	if($userId > 0) {
 		
-		echo "<p>Sorry, you are already logged in and therefore can't register another account.</p>";
+		echo "<p>Sorry, you are already logged in and therefore can't reserve a court.</p>";
 		$conn.close();
+	} else {
+		$date = date("y/m/d");
+		echo "<input type=\"text\" id=\"date\" value=\"$date\""/>
 	}
 	
 	?>
