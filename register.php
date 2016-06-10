@@ -14,6 +14,25 @@
   <div class="content">  
   <h1>UMW Tennis Center Account Registration</h1>
   <form class="registration" action="registerscript.php" method="post">
+  <?php   
+    session_start();
+	include('mydbinfo.php');
+	$conn = @mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
+	if ( !$conn ) {
+		echo("<p> Unable to connect to the database system" .
+		"Please try later. </p>");
+		exit();
+	}
+	
+	$userId = $_SESSION["user_id"];
+	
+	if($userId > 0) {
+		
+		echo "<p>Sorry, you are already logged in and therefore can't register another account.</p>";
+		$conn.close();
+	}
+	
+	?>
   	<label>Name: </label><input type="text" name="name" id="name" required /><br />
   	<label>Phone: </label><input type="text" id="phone" name="phone"placeholder="XXX-XXX-XXXX" onblur = "phoneCheck();" required/><br />
   	<label>Email: </label><input type="email" name="email" id="email" placeholder="name@example.com" onblur = "emailCheck();" required/><br />

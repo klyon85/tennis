@@ -11,14 +11,15 @@
 		echo("<p> Unable to connect to the database system" .
 		"Please try later. </p>");
 		exit();
-	}	
+	}
+
 	$name = htmlspecialchars($_POST["name"]);
 	$phone = htmlspecialchars($_POST["phone"]);
-    $email = htmlspecialchars($_POST["email"]);
+    	$email = htmlspecialchars($_POST["email"]);
 	$status = htmlspecialchars($_POST["status"]);
-    $month = htmlspecialchars($_POST["month"]);
+    	$month = htmlspecialchars($_POST["month"]);
 	$year = htmlspecialchars($_POST["year_start"]);
-    $password = htmlspecialchars($_POST["password"]);
+		$password = htmlspecialchars($_POST["password"]);
 	
 	$name1 = mysqli_real_escape_string($conn, $name);
 	$phone1 = mysqli_real_escape_string($conn, $phone);

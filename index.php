@@ -18,6 +18,12 @@
 <script type='text/javascript' src='calready.js'></script>
 </head>
 <body>
+	<?php
+	
+	session_start();
+	$SESSION["user_id"] = 2;
+	
+	?>
 	 <div w3-include-html="menu.html" class="menu"> </div>
  	 <script>
 		w3IncludeHTML();
