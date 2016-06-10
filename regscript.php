@@ -35,7 +35,7 @@
 	} else {
         
     $password1 = password_hash($password1, PASSWORD_DEFAULT);
-		$sql = "INSERT INTO tennis_users(email, password, phone, status, graddate) VALUES ('$email1', '$password1', '$phone1', '$status1', '$month1.$year1');";
+		$sql = "INSERT INTO tennis_users(email, password, phone, status, graddate, fullname) VALUES ('$email1', '$password1', '$phone1', '$status1', '$month1.$year1', '$name1');";
 		$result = @mysqli_query($conn, $sql);
 		$row = mysqli_fetch_array($result, MYSQL_NUM);
 

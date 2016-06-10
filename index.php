@@ -18,18 +18,26 @@
 <script type='text/javascript' src='calready.js'></script>
 </head>
 <body>
-	<?php
-	
-	session_start();
-	$SESSION["user_id"] = 2;
-	
-	?>
+
 	 <div w3-include-html="menu.html" class="menu"> </div>
  	 <script>
 		w3IncludeHTML();
 	 </script>
   <div class = "content">
-  <h1>UMW Tennis Center Reservation Portal</h1>  
+	<?php
+	
+	session_start();
+	$clientName = $_SESSION['name'];
+	
+	if(count($clientName) > 0) 
+            
+            echo "<h1>$clientName's UMW Tennis Reservation Portal</h1><a href = 'logout.php'> [LOGOUT OF THIS ACCOUNT]</a>";
+        
+        else
+        
+            echo "<h1>UMW Tennis Center Reservation Portal</h1> ";
+	
+	?> 
   <p>Welcome to the official UMW Tennis Center reservation portal! You can use this website to reserve court times and cancel them! Create an account or log in to started!</p>
     <p>Use the menu above to get started!</p>
     <p><em>If you cannot use a reservation you have made, please kindly cancel in advance to avoid extra fees and allow other players to take advantage of the court time.</p>
