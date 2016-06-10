@@ -6,6 +6,8 @@
 <link type="text/css" rel="stylesheet" href="style.css"/>
 <script src="http://www.w3schools.com/lib/w3data.js"></script>
 <script type="text/javascript" src="forms.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="rescheck.js"></script>
 </head>
 <body>
   <div w3-include-html="menu.html"  class="menu"></div>
@@ -16,7 +18,7 @@
   <div id=instructions>
   	Please complete the form to request a reservation.  You may reserve a court up to 7 days in advance and for a maximum of 3 hours at a time.
   </div>
-  <form class="reserve" action="revscript.php" method="post">
+  <form class="reserve" action="" method="post">
   <?php   
     session_start();
 	include('mydbinfo.php');
@@ -33,9 +35,6 @@
 		
 		echo "<p>Sorry, you are already logged in and therefore can't reserve a court.</p>";
 		$conn.close();
-	} else {
-		$date = date("y/m/d");
-		echo "<input type=\"text\" id=\"date\" value=\"$date\""/>
 	}
 	
 	?>
