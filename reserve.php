@@ -5,8 +5,19 @@
   <meta charset= "UTF-8"/>
 <link type="text/css" rel="stylesheet" href="style.css"/>
 <script src="http://www.w3schools.com/lib/w3data.js"></script>
-<script type="text/javascript" src="forms.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<link href='fullcalendar.css' rel='stylesheet' />
+<link href='fullcalendar.print.css' rel='stylesheet' media='print' />
+<script src='lib/moment.min.js'></script>
+<script src='lib/jquery.min.js'></script>
+<script src='fullcalendar.min.js'></script>
+<link href='lib/fullcalendar.min.css' rel='stylesheet' />
+<link href='scheduler.min.css' rel='stylesheet' />
+<script src='lib/moment.min.js'></script>
+<script src='lib/fullcalendar.min.js'></script>
+<script src='scheduler.min.js'></script>
+<link href='lib/cupertino/jquery-ui.min.css' rel='stylesheet' />
+<script type='text/javascript' src='calready.js'></script>
 </head>
 <body>
   <div w3-include-html="menu.html"  class="menu"></div>
@@ -14,6 +25,10 @@
 
   <div class="content">  
   <h1>UMW Tennis Center Account Reservation</h1>
+   <div id = "solid">
+	<div id='calendar'></div>
+  </div>
+  <br />
   <div id=instructions>
   	Please complete the form to request a reservation.  You may reserve a court up to 7 days in advance and for a maximum of 3 hours at a time.<br /><br />
   	<b>Tennis Center Hours</b><br />
