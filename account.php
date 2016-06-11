@@ -35,6 +35,9 @@
   	<br />
         <p>For security reasons, we cannot show your password. Ask an administrator to reset it if you forgot it.</p>
         <p><a href = 'logout.php'> [LOGOUT OF THIS ACCOUNT]</a></p>
+	<br />
+		<p><a href='reserve.php'>Reserve a court</a></p>
+
   </form>
 </div>
 </body>

@@ -40,8 +40,7 @@
 		$row = mysqli_fetch_array($result, MYSQL_NUM);
 
 		echo "You have registered successfully. Please head over to the login page to get started.";
-		//$url1='login.php';
-		//echo '<META HTTP-EQUIV=REFRESH CONTENT="0; '.$url1.'"';
+		echo "<p><a href='index.php'>Go Home.</a></p>";
 	}
 	$conn.close();
 ?>
