@@ -2,7 +2,6 @@ $(function() { // document ready
 
 		$('#calendar').fullCalendar({
 			theme: true,
-			now: '2016-05-07',
 			editable: true, // enable draggable events
 			aspectRatio: 1.8,
 			  minTime: "09:00:00",
