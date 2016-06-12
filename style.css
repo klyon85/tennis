@@ -24,7 +24,7 @@ li a {
 
 li a:hover, a:visited:hover {
     background-color: #555;
-    color: white;
+    color: red;
 }
 
 li a:visited {
