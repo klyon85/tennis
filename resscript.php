@@ -41,7 +41,7 @@
 		//Check for valid time
 		$validtime = true;
 		$diff = $en - $st;
-		if ($diff < 0 || $diff >= 3)
+		if ($diff <= 0 || $diff >= 3)
 			$validtime = false;
 
 		//Reference: http://www.w3schools.com/php/php_ref_date.asp
