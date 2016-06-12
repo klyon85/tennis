@@ -16,6 +16,15 @@ html {
     border-radius: 6px;
 }
 
+#acctable table, th, td {
+	border: 1px solid black;
+    border-collapse: collapse;
+}
+
+#acctable th, td {
+	text-align: center;
+}
+
 
 li a {
   
