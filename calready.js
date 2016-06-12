@@ -47,7 +47,7 @@ $(function() { // document ready
 				]},
 
 			],
-			events: 'http://cs.umw.edu/~khartnet/usertest/evt.json'
+			events: 'http://cs.umw.edu/~smiller3/tennis/evt.json'
 		});
                 
    

@@ -43,7 +43,10 @@
 		$diff = $en - $st;
 		if ($diff < 0 || $diff >= 3)
 			$validtime = false;
-	
+
+		//Reference: http://www.w3schools.com/php/php_ref_date.asp
+		//For PHP date methods and related info
+
 		//Check for valid hours of day of the week
 		$y = substr($date, 0, 4);
 		$m = substr($date, 5, 2);
