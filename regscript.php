@@ -33,8 +33,18 @@
 	if ($name1 == "" || $phone1 == "" || $email1 == "" || $status1 == "" || $year1 == "" || $password1 == "") {
 		exit;
 	} else {
-        
-    $password1 = password_hash($password1, PASSWORD_DEFAULT);
+      	//Check for a preexisting account
+		$ssql = "SELECT email FROM tennis_users WHERE email='$email1';";
+		$sresult = @mysqli_query($conn, $ssql);
+		$srow = mysqli_fetch_array($sresult, MYSQL_NUM);
+		if ($srow) {
+			echo "<p>An account already exists for this email.  Please login.</p>";
+			echo "<p><a href='index.php'>Go Home.</a></p>";
+			exit();
+		}
+    	
+		//Save the new user
+		$password1 = password_hash($password1, PASSWORD_DEFAULT);
 		$sql = "INSERT INTO tennis_users(email, password, phone, status, graddate, fullname) VALUES ('$email1', '$password1', '$phone1', '$status1', '$month1.$year1', '$name1');";
 		$result = @mysqli_query($conn, $sql);
 		$row = mysqli_fetch_array($result, MYSQL_NUM);
