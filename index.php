@@ -40,6 +40,15 @@
 	?> 
   <p>Welcome to the official UMW Tennis Center reservation portal! You can use this website to reserve court times and cancel them! Create an account or log in to started!</p>
     <p>Use the menu above to get started!</p>
+        <?php
+    
+    if(count($clientName) > 0) {
+          
+          echo '<p>Now that you have logged in, you may <a href = "reserve.php" >MAKE RESERVATIONS (click here)</a></p>';
+
+    }
+    
+    ?>
     <p><em>If you cannot use a reservation you have made, please kindly cancel in advance to avoid extra fees and allow other players to take advantage of the court time.</em></p>
     <div id = "solid">
 	<div id='calendar'></div>
