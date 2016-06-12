@@ -8,13 +8,13 @@ html {
 
 /* https://css-tricks.com/perfect-full-page-background-image/ */
 
-ul li {
+.menu ul li {
     display:inline;
     padding: 20px;
     background-color: #66ff00;
     opacity:  0.75;
     border-radius: 6px;
-    }
+}
 
 
 li a {
@@ -24,7 +24,7 @@ li a {
 
 li a:hover, a:visited:hover {
     background-color: #555;
-    color: white;
+    color: red;
 }
 
 li a:visited {

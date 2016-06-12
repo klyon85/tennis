@@ -24,7 +24,7 @@
   <script> w3IncludeHTML();</script>
 
   <div class="content">  
-  <h1>UMW Tennis Center Account Reservation</h1>
+  <h1>UMW Tennis Center Court Reservation</h1>
    <div id = "solid">
 	<div id='calendar'></div>
   </div>
@@ -35,7 +35,19 @@
 	Monday - Friday: 	0900 - 2100 <br />
 	Saturday: 			0900 - 1800 <br />
 	Sunday: 			1100 - 1800 <br />
-  </div>
+	<br />
+	<b>Prices</b><br />
+	<ul>
+		<li>Full-time students, faculty and staff: Free </li>
+		<li>Half-time students:  Half the price for No UMW Affliation (see below).</li>
+		<li>No UMW Affliation:  
+			<ul>
+				<li>Singles: $20 for 1 hour or $30 for 2 hours.</li>
+				<li>Doubles: $20 for 1 hour or $40 for 2 hours.</li>
+			</ul>
+		</li>
+	</ul>
+  </div><br />
   <form class="reserve" action="resscript.php" method="post">
   <?php   
     session_start();
@@ -56,7 +68,7 @@
 	}
 	
 	//Get reservations from database and push to JSON
-	$sql = "SELECT * FROM tennis_reservations;";
+	$sql = "SELECT title, res_id, start, end, court FROM tennis_reservations;";
 	$result = @mysqli_query($conn, $sql);
 	$row = mysqli_fetch_array($result, MYSQL_NUM);
 	//insert JSON encoding function here.
