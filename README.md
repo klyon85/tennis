@@ -3,10 +3,6 @@
 A collaborative project by Samantha Miller and Kevin Hartnett for CPSC-348 at UMW.  
 We created a website for the UMW Tennis Center to electronically schedule and manage tennis court reservations.
 
-## Sources
-
-* http://www.w3schools.com/howto/howto_html_include.asp provides a useful script to add an HTML file (menu.html) to each desired webpage.
-
 ##Our SQL database login info:
 
 Hosted on CS server
@@ -41,9 +37,11 @@ Some things we did NOT get done include: adding an administrator control panel, 
 
 ###Sources: 
 
-Easy CSS Backgrounds: https://css-tricks.com/perfect-full-page-background-image/ 
+* http://www.w3schools.com/howto/howto_html_include.asp provides a useful script to add an HTML file (menu.html) to each desired webpage.
 
-Input Focus: http://jsfiddle.net/simevidas/CXUpm/1/
+* Easy CSS Backgrounds: https://css-tricks.com/perfect-full-page-background-image/ 
 
-JSON/PHP integration: http://stackoverflow.com/questions/7895335/append-data-to-a-json-file-with-php
+* Input Focus: http://jsfiddle.net/simevidas/CXUpm/1/
+
+* JSON/PHP integration: http://stackoverflow.com/questions/7895335/append-data-to-a-json-file-with-php
 
