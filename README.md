@@ -8,10 +8,16 @@ We created a website for the UMW Tennis Center to electronically schedule and ma
 * http://www.w3schools.com/howto/howto_html_include.asp provides a useful script to add an HTML file (menu.html) to each desired webpage.
 
 ##Our SQL database login info:
+
 Hosted on CS server
+
 User: smiller3
+
 Pass: apple
+
 DB Name: cpsc348_smiller3
+
+##General Site Information
 
 Our website uses multiple tables for maximum efficiency.
 
