@@ -74,6 +74,22 @@
 			echo "<p><a href='index.php'>[Return Home.]</a><p>";
 			exit();
 		}
+
+		//Check if user has already created a reservation for that day
+		$usql = "SELECT * FROM tennis_reservations WHERE user_id='$user_id' AND date='$date'"; 
+		$uresult = @mysqli_query($conn, $ssql); 
+		$datecreated = false;
+		if (mysqli_num_rows($uresult) > 0) {
+			$datecreated = true;
+		} else {
+			$reserved = true;
+		}
+		if ($datecreated) {
+			echo "<p> You may reserve a court once per date. You have already initialized a reservation for this date. Please select another. </p>";
+			echo "<p><a href='index.php'>[Return Home.]</a><p>";
+			exit();
+		}
+
     	//Check for a reexisting reservation
 		$ssql = "SELECT start, end FROM tennis_reservations WHERE court='$court' AND date='$date'"; 
 		$sresult = @mysqli_query($conn, $ssql); 

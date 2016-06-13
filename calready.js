@@ -1,6 +1,7 @@
 $(function() { // document ready
 
 		$('#calendar').fullCalendar({
+			schedulerLicenseKey: 'GPL-My-Project-Is-Open-Source',
 			theme: true,
 			editable: true, // enable draggable events
 			aspectRatio: 1.8,
@@ -10,7 +11,7 @@ $(function() { // document ready
 			header: {
 				left: 'today prev,next',
 				center: 'title',
-				right: 'timelineDay,timelineThreeDays,agendaWeek,month'
+				right: 'timelineDay,agendaWeek,month'
 			},
 			defaultView: 'timelineDay',
 			views: {
