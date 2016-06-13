@@ -7,7 +7,7 @@ We created a website for the UMW Tennis Center to electronically schedule and ma
 
 * http://www.w3schools.com/howto/howto_html_include.asp provides a useful script to add an HTML file (menu.html) to each desired webpage.
 
-Our SQL database login info:
+##Our SQL database login info:
 Hosted on CS server
 User: smiller3
 Pass: apple
@@ -26,12 +26,15 @@ When a user registers for our website, we create an entry in our table called �
 The backbone of our website was made from scratch in HTML5 and CSS. Our images are completely public domain and free to use without attribution. We have a few code snippets we found online but have left comments in our code of the source. We used references, namely StackOverflow, to figure out the picky JSON format of FullCalendar as well as how to perform some more intricate FullCalendar operations.
 
 
-What we accomplished:
+###What we accomplished:
 
 We made our website in HTML5 and CSS without a template. Our theme is totally from scratch, other than the background image, which we got online. We made a basic site map, and then we put in the proper pages (main, account, reserve, registration, login, calendar, etc). We researched and found an appropriate calendar plugin for clients to use. We then found out ways to manipulate it into receiving information from a server. We architected SQL databases to store user info and logins and devised an appropriate password security scheme. We made forms in HTML with local (JavaScript) validation. However, because this is a public-facing website, we also added serverside (PHP) checks on what was being put in and sanitized it. We then made scripts to process this information and connect to our SQL database tables and added full access control via Session Variables to our website. Finally, we came up with a scheme to show our calendar’s reservations in the most efficient way possible. We made it so that when a user enters acceptable reservation information, the information is shown in both the SQL database and the JSON file the calendar runs on, so it shows up live in the calendar as well as within our database so the user can see it on their accounts page.
 
 Some things we did NOT get done include: adding an administrator control panel, adding reservation modification and cancellation, and making our calendar more “responsive.” We originally had plans to do much more when our group was larger. However, the first Kenny turned out to be just auditing the class and did not ever show up again. The second Kenny left the class without warning, and we had thought he was working on his part (the database tier) for a long time before we learned he had just dropped the class entirely. Therefore, we only had 2 people involved, but we spent a lot of time and did what we could. We simply ran out of time, but we prioritized so that we would have a working website, good and secure signup and login scripts, a solid reservation input system, and a calendar that displays correctly and accepts a JSON feed correctly.
-Sources: 
+
+
+###Sources: 
+
 Easy CSS Backgrounds: https://css-tricks.com/perfect-full-page-background-image/ 
 
 Input Focus: http://jsfiddle.net/simevidas/CXUpm/1/
