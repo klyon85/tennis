@@ -13,6 +13,12 @@ Pass: apple
 
 DB Name: cpsc348_smiller3
 
+##Website login info:
+
+Sample email: khartnet@mail.umw.edu
+
+Password: kevin
+
 ##General Site Information
 
 Our website uses multiple tables for maximum efficiency.
@@ -44,4 +50,6 @@ Some things we did NOT get done include: adding an administrator control panel, 
 * Input Focus: http://jsfiddle.net/simevidas/CXUpm/1/
 
 * JSON/PHP integration: http://stackoverflow.com/questions/7895335/append-data-to-a-json-file-with-php
+
+* NOTE: Additional sources are cited within code
 
